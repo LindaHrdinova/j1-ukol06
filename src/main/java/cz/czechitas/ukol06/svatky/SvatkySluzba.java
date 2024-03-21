@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.time.MonthDay;
@@ -19,9 +20,7 @@ public class SvatkySluzba {
 
     public SvatkySluzba() throws IOException {
         // TODO načíst seznam svátků ze souboru svatky.json
-
-        // Následující řádek po vlastní implementaci smažete.
-        seznamSvatku = null;
+        seznamSvatku = objectMapper.readValue(new File(String.valueOf(cestaKDatum)), SeznamSvatku.class);
     }
 
     public List<String> vyhledatSvatkyDnes() {
