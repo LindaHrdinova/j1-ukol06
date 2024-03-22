@@ -42,6 +42,5 @@ public class SvatkySluzba {
                 .filter(Svatek -> Svatek.getSvatky().getFirst().getDen().equals(day))
                 .map(Svatek -> seznamSvatku.getSvatky().getFirst().getJmeno())
                 .toList();*/
-
     }
 }
