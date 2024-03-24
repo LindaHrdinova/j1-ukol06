@@ -30,17 +30,11 @@ public class SvatkySluzba {
 
     public List<String> vyhledatSvatkyKeDni(MonthDay day) {
         // TODO
-        seznamSvatku.getSvatky();
+        //seznamSvatku.getSvatky();
 
         return seznamSvatku.getSvatky().stream()
                 .filter(Svatek -> Svatek.getDen().equals(day))
                 .map(Svatek::getJmeno)
                 .toList();
-
-         /* Stream<SeznamSvatku> seznamSvatkuStream = (Stream<SeznamSvatku>) seznamSvatku;
-        return seznamSvatkuStream
-                .filter(Svatek -> Svatek.getSvatky().getFirst().getDen().equals(day))
-                .map(Svatek -> seznamSvatku.getSvatky().getFirst().getJmeno())
-                .toList();*/
     }
 }
