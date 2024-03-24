@@ -16,6 +16,29 @@ class SvatkySluzbaTest {
         String denTest = "--03-18";
         List<String> jmenoTest = List.of("Eduard");
         SvatkySluzba svatky = new SvatkySluzba();
-        assertEquals(jmenoTest, svatky.vyhledatSvatkyKeDni(MonthDay.of(3,18)));
+        assertEquals(jmenoTest, svatky.vyhledatSvatkyKeDni(MonthDay.of(3, 18)));
+    }
+
+    @Test
+    void vyhledatVicSvatkuKeDni() throws IOException {
+        //String denTest = "--09-01";
+        List<String> jmenaTest = List.of("Linda", "Samuel", "Jiljí");
+        SvatkySluzba svatky = new SvatkySluzba();
+        assertEquals(jmenaTest, svatky.vyhledatSvatkyKeDni(MonthDay.of(9, 1)));
+    }
+
+    @Test
+    void vyhledatNesvatekKeDni() throws IOException {
+        //String denTest = "--01-01";
+        List<String> nejmenaTest = List.of("");
+        SvatkySluzba svatky = new SvatkySluzba();
+        assertEquals(nejmenaTest, svatky.vyhledatSvatkyKeDni(MonthDay.of(1, 1)));
+    }
+
+    @Test
+    void vyhledatNesvatekKeDni2() throws IOException {
+        //String denTest = "--01-01";
+        SvatkySluzba svatky = new SvatkySluzba();
+        assertEquals(true, svatky.vyhledatSvatkyKeDni(MonthDay.of(1, 1)).isEmpty());
     }
 }
